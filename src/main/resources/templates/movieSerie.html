@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1> PELICULAS O SERIES!!!</h1>
+        <H3> Crear </H3>
+            
+            <form  th:action="@{/peliculaSerie/save}" method="POST" th:object="${peliculaSerie}">
+
+                <div>
+                    <label for="titulo"> Titulo Pelicula:</label>
+                    <input type="text"  th:field="*{titulo}" name="titulo" >
+                </div> 
+                <div>
+                    <label for="fechaCreacion"> Fecha de Creacion:</label>
+                    <input type="text" th:field="*{fechaCreacion}" name="fechaCreacion" >
+                </div> 
+                
+                <div>
+                    <label for="imagen"> Imagen:</label>
+                    <input type="text" th:field="*{imagen}" name="imagen" >
+                </div> 
+                
+                  <div>
+                    <label for="calificacion"> Calificacion</label>
+                    <input type="text" th:field="*{calificacion}" name="calificacion" >
+                </div> 
+                
+                 <div>
+                    <label for="personaje"> Personajes</label>
+                    <select th:field="*{personaje}" id="personaje">
+                        <option th:each= "personaje:${personajes}"
+                                th:value="${personaje.id}"
+                                th:text="${personaje.nombre}"
+                                />    
+                    </select>  
+
+                </div>
+                
+                 <div>
+                    <label for="genero"> Genero</label>
+                    <select th:field="*{genero}" id="genero">
+                        <option th:each= "genero:${generos}"
+                                th:value="${genero.id}"
+                                th:text="${genero.nombre}"
+                                />    
+                    </select>  
+
+                </div>
+
+
+                <br/><button type="submit" > Guardar</button>
+            </form>
+            
+            <H3> Modificar </H3>
+            
+            <form  method="POST" th:object="${personaje}">
+
+                <div>
+                    <label for="nombre"> Nombre del Personaje:</label>
+                    <input type="text"   name="nombre" >
+                </div> 
+                <div>
+                    <label for="edad"> Edad del Personaje:</label>
+                    <input type="edad"  name="edad" >
+                </div> 
+                
+                <div>
+                    <label for="peso"> Peso del Personaje:</label>
+                    <input type="peso"  name="peso" >
+                </div> 
+                
+                  <div>
+                    <label for="historia"> Historia del Personaje:</label>
+                    <input type="historia"  name="historia" >
+                </div> 
+                
+                  <div>
+                    <label for="peliculaSerie"> Peliculas Asociadas</label>
+                    <input type="historia"  name="historia" >
+                </div> 
+
+                <br/><button type="submit" > Guardar</button>
+            </form>
+            
+            <H3> Eliminar </H3>
+            
+            <form  method="POST" th:object="${personaje}">
+
+                <div>
+                    <label for="nombre"> Nombre del Personaje:</label>
+                    <input type="text"   name="nombre" >
+                </div> 
+                <div>
+                    <label for="edad"> Edad del Personaje:</label>
+                    <input type="edad"  name="edad" >
+                </div> 
+                
+                <div>
+                    <label for="peso"> Peso del Personaje:</label>
+                    <input type="peso"  name="peso" >
+                </div> 
+                
+                  <div>
+                    <label for="historia"> Historia del Personaje:</label>
+                    <input type="historia"  name="historia" >
+                </div> 
+                
+                  <div>
+                    <label for="peliculaSerie"> Peliculas Asociadas</label>
+                    <input type="historia"  name="historia" >
+                </div> 
+                                
+                 
+
+                <br/><button type="submit" > Guardar</button>
+            </form>
+
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1> GENERO!!</h1>
+        
+        <H3> Crear </H3>
+            
+            <form  th:action="@{/genero/save}" method="POST" th:object="${genero}">
+
+                <div>
+                    <label for="imagen"> Imagen de Genero</label>
+                    <input type="text"  th:field="*{imagen}" name="imagen" >
+                </div> 
+                <div>
+                    <label for="nombre"> Nombre del Genero:</label>
+                    <input type="text" th:field="*{nombre}" name="nombre" >
+                </div> 
+
+                <br/><button type="submit" > Guardar</button>
+            </form>
+            
+            <H3> Modificar </H3>
+            
+            <form  method="POST" th:object="${personaje}">
+
+                <div>
+                    <label for="nombre"> Nombre del Personaje:</label>
+                    <input type="text"   name="nombre" >
+                </div> 
+                <div>
+                    <label for="edad"> Edad del Personaje:</label>
+                    <input type="edad"  name="edad" >
+                </div> 
+                
+                <div>
+                    <label for="peso"> Peso del Personaje:</label>
+                    <input type="peso"  name="peso" >
+                </div> 
+                
+                  <div>
+                    <label for="historia"> Historia del Personaje:</label>
+                    <input type="historia"  name="historia" >
+                </div> 
+                
+                  <div>
+                    <label for="peliculaSerie"> Peliculas Asociadas</label>
+                    <input type="historia"  name="historia" >
+                </div> 
+
+                <br/><button type="submit" > Guardar</button>
+            </form>
+            
+            <H3> Eliminar </H3>
+            
+            <form th:action="@{/genero/delete}"  method="POST" th:object="${genero}">
+
+               <div>
+                    <label for="nombre"> Nombre del Genero:</label>
+                    <input type="text" th:field="*{nombre}" name="nombre" >
+                </div> 
+                
+                <br/><button type="submit" > Eliminar</button>
+            </form>
+
+    </body>
+</html>

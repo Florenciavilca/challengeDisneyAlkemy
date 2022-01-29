@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+       <h2> PERSONAJES!!</h2>
+        <div>
+            <H3> Crear </H3>
+            
+            <form th:action="@{/personajes/guardar}" method="POST" th:object="${personaje}">
+
+                <div>
+                    <label for="nombre"> Nombre del Personaje:</label>
+                    <input type="text"  th:field="*{nombre}" name="nombre" >
+                </div> 
+                <div>
+                    <label for="edad"> Edad del Personaje:</label>
+                    <input type="text" th:field="*{edad}" name="edad" >
+                </div> 
+                
+                <div>
+                    <label for="peso"> Peso del Personaje:</label>
+                    <input type="text" th:field="*{peso}" name="peso" >
+                </div> 
+                
+                  <div>
+                    <label for="historia"> Historia del Personaje:</label>
+                    <input type="text" th:field="*{historia}" name="historia" >
+                </div> 
+
+
+                <br/><button type="submit" > Guardar</button>
+            </form>
+
+            <H3> Modificar </H3>
+
+            <form th:action="@{/personajes/update}" method="POST" th:object="${personaje}">
+
+              
+                <div>
+                    <label for="nombre"> Nombre del Personaje:</label>
+                    <input type="text" th:field="*{nombre}" th:text="${personaje.nombre}"  name="nombre" >
+                </div> 
+                    <div>
+                        <label for="edad"> Edad del Personaje:</label>
+                        <input type="edad" th:text="${personaje.edad}" th:field="*{edad}"  name="edad" >
+                    </div> 
+
+                    <div>
+                        <label for="peso"> Peso del Personaje:</label>
+                        <input type="peso" th:text="${personaje.peso}" th:field="*{peso}" name="peso" >
+                    </div> 
+
+                    <div>
+                        <label for="historia"> Historia del Personaje:</label>
+                        <input type="historia" th:text="${personaje.historia}" th:field="*{historia}" name="historia" >
+                    </div> 
+
+                <br/><button type="submit" > Modificar</button>
+            </form>
+
+            <H3> Eliminar </H3>
+            
+            <form  method="POST" th:object="${personaje}">
+
+                <div>
+                    <label for="nombre"> Nombre del Personaje:</label>
+                    <input type="text"   name="nombre" >
+                </div> 
+                <div>
+                    <label for="edad"> Edad del Personaje:</label>
+                    <input type="edad"  name="edad" >
+                </div> 
+                
+                <div>
+                    <label for="peso"> Peso del Personaje:</label>
+                    <input type="peso"  name="peso" >
+                </div> 
+                
+                  <div>
+                    <label for="historia"> Historia del Personaje:</label>
+                    <input type="historia"  name="historia" >
+                </div> 
+                
+                  <div>
+                    <label for="peliculaSerie"> Peliculas Asociadas</label>
+                    <input type="historia"  name="historia" >
+                </div> 
+
+                <br/><button type="submit" > Guardar</button>
+            </form>
+          
+    </body>
+</html>
